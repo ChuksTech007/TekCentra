@@ -33,6 +33,7 @@ import img9 from "./assets/images/img9.JPG";
 import img10 from "./assets/images/img10.JPG";
 import img11 from "./assets/images/img11.jpeg";
 import img12 from "./assets/images/img12.png";
+import img13 from "./assets/images/img13.JPG";
 
 // ---------- Utility: simple counter hook ----------
 function useCounter(target = 0, duration = 1200) {
@@ -525,7 +526,7 @@ const News = () => {
         title: "Major EdTech Integration Announced",
         date: "Dec 15, 2024",
         desc: "TekCentra partners with leading educational platforms to bring Web3 curriculum to over 1 million students worldwide.",
-        img: "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1600&auto=format&fit=crop",
+        img: img13
       },
       {
         type: "Event",
@@ -674,7 +675,7 @@ const GetInvolved = () => {
 
 // ---------- OUR JOURNEY Section Component ----------
 function OurJourney() {
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-emerald-50 text-slate-900">
       <div className="max-w-6xl mx-auto px-6">
