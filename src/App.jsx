@@ -222,7 +222,7 @@ const Hero = () => (
           The Center of Tech-Driven Collaborations
         </h2>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-600">
-          TekCentra is the premium growth engine for emerging tech—offering end-to-end adoption architecture that takes
+          TekCentra is the premium growth engine for emerging tech offering end-to-end adoption architecture that takes
           projects from concept to real-world market use.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
@@ -246,7 +246,7 @@ const Hero = () => (
         <div className="mt-6 grid max-w-lg grid-cols-2 gap-4 text-sm">
           <div className="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm md:justify-start">
             <FaNetworkWired className="text-blue-600 w-7 h-7" />
-            <span>Web3 • Blockchain • Fintech</span>
+            <span>Web3, Blockchain, Ai, Fintech</span>
           </div>
           <div className="flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white p-3 shadow-sm md:justify-start">
             <FaHandshake className="text-emerald-500 w-7 h-7" />
@@ -301,10 +301,10 @@ const About = () => {
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
             {[
-              { icon: <FaBolt />, text: "Confident" },
-              { icon: <FaRocket />, text: "Futuristic" },
-              { icon: <FaUsers />, text: "Collaborative" },
-              { icon: <FaBookOpen />, text: "Inspiring" },
+              { icon: <FaRocket />, text: "Innovative" },
+              { icon: <FaUsers />, text: "Collaborative"},
+              { icon: <FaBookOpen />, text: "Advanced" },
+              { icon: <FaRocket />, text: "Confident" },
             ].map((v, i) => (
               <motion.div
                 key={i}
@@ -350,7 +350,7 @@ const Programs = () => {
         <div className="mx-auto max-w-3xl text-center">
           <h3 className="text-3xl font-extrabold text-slate-900">Programs & Initiatives</h3>
           <p className="mt-3 text-slate-600">
-            We take tech from idea to adoption through growth marketing, tech partnerships, developer onboarding, and
+            We take tech project from ideation and market dominance to global adoption through growth marketing, tech partnerships, developer onboarding, and
             utility creation.
           </p>
         </div>
@@ -369,16 +369,16 @@ const Programs = () => {
             },
             {
               title: "Tech Partnerships & Integrations",
-              desc: "Alliances with EdTech, Blockchain networks, DAOs, and creator communities.",
+              desc: "Alliances with FinTech, EdTech, Blockchain networks, DAOs, and creator communities.",
               icon: <FaGlobe />,
             },
             {
               title: "Creator & Developer Ecosystem",
-              desc: "Onboard innovators, fund experiments, and co‑develop new utilities.",
+              desc: "Onboard innovators, fund experiments, and co-develop new utilities.",
               icon: <FaShapes />,
             },
             {
-              title: "Blockchain Adoption Catalyst",
+              title: "Web3 Adoption Catalyst",
               desc: "Accelerate adoption through education, onboarding programs, and integration.",
               icon: <FaNetworkWired />,
             },
@@ -405,9 +405,9 @@ const Programs = () => {
 
 // ---------- IMPACT Section Component ----------
 const Impact = () => {
-  const statProjects = useCounter(54, 1500);
-  const statUsers = useCounter(1200000, 1700);
-  const statPartners = useCounter(36, 1600);
+  const statProjects = useCounter(7, 1500);
+  const statUsers = useCounter(6000000, 1700);
+  const statPartners = useCounter(5, 1600);
 
   return (
     <section className="relative overflow-hidden py-20">
@@ -417,8 +417,7 @@ const Impact = () => {
           “Without adoption, innovation dies.”
         </blockquote>
         <p className="mt-3 text-slate-600">
-          Adoption is the currency of the future. We design adoption architectures that convert breakthrough ideas into
-          mainstream impact.
+          Adoption is the currency of the future. We design adoption architectures that convert tech driven solutions into mainstream impact.
         </p>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           <motion.div
@@ -439,7 +438,7 @@ const Impact = () => {
             className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
           >
             <div className="text-4xl font-extrabold text-emerald-600">
-              {(statUsers / 1000000).toFixed(1)}M+
+              {(statUsers / 1000000).toFixed(1)}k+
             </div>
             <div className="mt-1 text-sm text-slate-600">Users reached / onboarded</div>
           </motion.div>
@@ -469,7 +468,7 @@ const pillars = [
   {
     icon: <FaGlobe className="text-emerald-500 w-8 h-8" />,
     title: "Tech Partnerships & Integrations",
-    desc: "Forms strategic alliances with EdTech platforms, Blockchain networks, DAOs, and creator communities to expand ecosystem reach.",
+    desc: "Forms strategic alliances with FinTech, EdTech platforms, Blockchain networks, DAOs, and creator communities to expand ecosystem reach.",
   },
   {
     icon: <FaShapes className="text-purple-500 w-8 h-8" />,
@@ -484,13 +483,13 @@ const pillars = [
   {
     icon: <FaBookOpen className="text-yellow-500 w-8 h-8" />,
     title: "Thought Leadership",
-    desc: "Hosts summits, publishes research, and collaborates with top minds in Web3 education and decentralized innovation to shape the future of technology.",
+    desc: "Hosts summits, publishes research, and collaborates with top minds in FinTech / Web3 education and decentralized innovation to shape the future of technology.",
   },
 ];
 
 function OurPillars() {
   return (
-    <section id="pillars" className="py-20 bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+    <section id="pillars" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-extrabold text-center text-slate-900 mb-2 font-sans">Our Pillars</h2>
         <p className="text-center text-lg text-slate-600 mb-12 font-sans">
@@ -608,6 +607,25 @@ const GetInvolved = () => {
     show: { opacity: 1, y: 0, scale: 1 },
   };
 
+  // Only 3 cards, no Developers
+  const cards = [
+    {
+      title: "Community",
+      desc: "Identify & Collaborate on tech driven solutions & Opportunities.",
+      cta: "Join Community",
+    },
+    {
+      title: "Partners",
+      desc: "Collaborate with industry leaders to accelerate mutual growth.",
+      cta: "Become Partner",
+    },
+    {
+      title: "Investors",
+      desc: "Discover and invest in promising Web3 projects and startups.",
+      cta: "Explore Deals",
+    },
+  ];
+
   return (
     <section id="involved" className="relative overflow-hidden py-20">
       <NodesBG />
@@ -620,33 +638,12 @@ const GetInvolved = () => {
         </div>
         <motion.div
           ref={ref}
-          className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
-          {[
-            {
-              title: "Creators",
-              desc: "Build, innovate, and monetize your Web3 creations with our support.",
-              cta: "Join as Creator",
-            },
-            {
-              title: "Partners",
-              desc: "Collaborate with industry leaders to accelerate mutual growth.",
-              cta: "Become Partner",
-            },
-            {
-              title: "Developers",
-              desc: "Access tools, funding, and mentorship to build the next big thing.",
-              cta: "Start Building",
-            },
-            {
-              title: "Investors",
-              desc: "Discover and invest in promising Web3 projects and startups.",
-              cta: "Explore Deals",
-            },
-          ].map((card, i) => (
+          {cards.map((card, i) => (
             <motion.div
               key={i}
               variants={itemVariants}
@@ -662,6 +659,7 @@ const GetInvolved = () => {
                 className="mt-5 inline-flex w-max items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-400"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => scrollToId("contact")}
               >
                 {card.cta}
               </motion.button>
@@ -675,13 +673,13 @@ const GetInvolved = () => {
 
 // ---------- OUR JOURNEY Section Component ----------
 function OurJourney() {
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img13];
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-emerald-50 text-slate-900">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Our Journey</h2>
         <p className="text-center text-slate-600 mb-10 max-w-2xl mx-auto">
-          TekCentra started with a vision to make Web3 and fintech accessible. From empowering startups to partnering with enterprises, we’ve grown into a trusted name driving innovation for the digital generation.
+          TekCentra started with a vision to make Web3 and fintech accessible. From empowering individuals & Businesses to partnering with enterprises, we've grown into a trusted name driving innovation for the digital generation.
         </p>
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -711,65 +709,7 @@ function OurJourney() {
   );
 }
 
-// ---------- HOW IT WORKS Section Component ----------
-const HowItWorks = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
-  return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <h3 className="text-3xl font-extrabold text-slate-900">How TekCentra Works</h3>
-          <p className="mt-3 text-slate-600">
-            End‑to‑end adoption architecture that takes projects from concept to real‑world market use.
-          </p>
-        </div>
-        <motion.div
-          ref={ref}
-          className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-4"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-        >
-          {[
-            { step: "1", title: "Concept", desc: "Clarify value, audience, and go‑to‑market." },
-            { step: "2", title: "Infrastructure", desc: "Integrations, security, and dev tooling." },
-            { step: "3", title: "Growth", desc: "Education campaigns and ecosystem partnerships." },
-            { step: "4", title: "Adoption", desc: "Onboarding, utility creation, real‑world usage." },
-          ].map((s, i) => (
-            <motion.div
-              key={i}
-              variants={itemVariants}
-              className="relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <span className="absolute -top-3 left-6 inline-flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white shadow">
-                {s.step}
-              </span>
-              <h4 className="mt-4 text-lg font-semibold text-slate-900">{s.title}</h4>
-              <p className="mt-2 text-sm text-slate-600">{s.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-};
 
 // ---------- TESTIMONIALS Section Component ----------
 const testimonialData = [
@@ -933,11 +873,17 @@ const Contact = () => {
               placeholder="Company / Project"
               className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
             />
-            <input
-              type="text"
-              placeholder="Partnership Type"
-              className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
-            />
+            <select
+              className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400 text-slate-600"
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select Partnership Type
+              </option>
+              <option value="partnership">Partnership</option>
+              <option value="community">Community</option>
+              <option value="investor">Investor</option>
+            </select>
             <textarea
               placeholder="Project Description"
               rows={5}
@@ -964,7 +910,7 @@ const Footer = () => (
         <div className="text-xl font-extrabold text-slate-900">
           Tek<span className="text-blue-600">Centra</span>
         </div>
-        <p className="mt-1 text-sm text-slate-500">Adoption is the currency of the future.</p>
+        <p className="mt-1 text-sm text-slate-500">Adopt, Adapt, Advance.</p>
       </div>
       <div className="flex items-center gap-5 text-slate-500">
         <a href="#" aria-label="Twitter" className="transition hover:text-slate-900"><FaTwitter /></a>
@@ -989,11 +935,10 @@ export default function App() {
         <About />
         <Programs />
         <Impact />
-        <OurPillars /> {/* <-- Add here */}
+        <OurPillars />
+        <OurJourney />
         <News />
         <GetInvolved />
-        <OurJourney />
-        <HowItWorks />
         <Testimonials />
         <Contact />
       </main>
