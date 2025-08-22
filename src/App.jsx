@@ -20,6 +20,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Swal from 'sweetalert2'
 import "./App.css";
 import img1 from "./assets/images/img1.jpeg";
 import img2 from "./assets/images/img2.jpeg";
@@ -786,6 +787,40 @@ const Testimonials = () => {
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "13eb48df-f6c6-49a2-b5ce-8302ebaa66d5"); // <-- Your real access key
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully!");
+      event.target.reset();
+      Swal.fire({
+        title: "Good job!",
+        text: "Your application has been submitted successfully!",
+        icon: "success"
+      });
+    } else {
+      setResult(data.message || "Something went wrong.");
+      Swal.fire({
+        title: "Error!",
+        text: data.message || "Something went wrong. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
+    }
+  };
 
   const formVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -855,27 +890,35 @@ const Contact = () => {
             variants={formVariants}
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
+            onSubmit={onSubmit}
           >
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <input
                 type="text"
+                name="name"
                 placeholder="Full Name"
+                required
                 className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                required
                 className="rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
               />
             </div>
             <input
               type="text"
+              name="company"
               placeholder="Company / Project"
               className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
             />
             <select
+              name="type"
               className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400 text-slate-600"
               defaultValue=""
+              required
             >
               <option value="" disabled>
                 Select Partnership Type
@@ -885,16 +928,19 @@ const Contact = () => {
               <option value="investor">Investor</option>
             </select>
             <textarea
+              name="message"
               placeholder="Project Description"
               rows={5}
+              required
               className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-400"
             />
             <button
-              type="button"
+              type="submit"
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700"
             >
               Submit Application <FaPaperPlane />
             </button>
+            <div className="mt-3 text-center text-sm text-emerald-600 min-h-[24px]">{result}</div>
           </motion.form>
         </div>
       </div>
