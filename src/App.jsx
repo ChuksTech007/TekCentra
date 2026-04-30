@@ -39,10 +39,10 @@ import img9 from "./assets/images/img9.JPG";
 import img10 from "./assets/images/img10.JPG";
 import img11 from "./assets/images/img11.jpeg";
 import img12 from "./assets/images/img12.png";
-import img13 from "./assets/images/img13.JPG";
+import img13 from "./assets/images/img13.jpg";
 import logo1 from "./assets/images/IMG_0293.JPG";
 import logo2 from "./assets/images/IMG_4281.JPG";
-import logo3 from "./assets/images/primex.JPG";
+import logo3 from "./assets/images/primex.jpg";
 
 // ---------- Utility: simple counter hook ----------
 function useCounter(target = 0, duration = 1200) {
